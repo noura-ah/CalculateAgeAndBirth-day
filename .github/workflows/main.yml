@@ -28,4 +28,4 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
-      - run: python main.py noura 22-8-1993
+      - run: python main.py "noura" "1-1-1995" ""
