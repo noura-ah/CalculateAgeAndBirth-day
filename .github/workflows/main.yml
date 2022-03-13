@@ -28,5 +28,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
-      - run: 
-         echo noura 1-1-1993 "" | main.py 
+      - name: Install Dependencies
+      - run: |
+         npm install
+         echo main.py noura 1-1-1993 ""
