@@ -29,4 +29,4 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: x64
       - run: 
-         echo noura 1-1-1993  | main.py 
+         echo noura 1-1-1993 "" | main.py 
