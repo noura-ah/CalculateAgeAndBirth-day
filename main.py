@@ -1,4 +1,5 @@
 import datetime
+import sys
 
 #calculate age
 def age(date):
@@ -20,9 +21,14 @@ def invalidDate(birth):
 #receive new entries until it's null then return dict
 def entry():
     newdict = {}
-    name = input("enter name:")
-    while name != "":
-        birth = input("enter birthdate (d-m-y):")
+    print("enter name:")
+    name = sys.argv[1]
+    print(name)
+    while name != " ":
+        print("enter birthdate (d-m-y):")
+        birth = sys.argv[2]
+        print(birth)
+
 
         #if invalidDate true pass this round
         if invalidDate(birth):
@@ -30,7 +36,13 @@ def entry():
             continue
         birth = datetime.datetime.strptime(birth, "%d-%m-%Y").date()
         newdict[name] = age(birth), birth.strftime("%A")
-        name = input("enter name:")
+        print("enter name:")
+        name = sys.argv[3]
+
+        #dalete first persons info
+        sys.argv.pop(1)
+        sys.argv.pop(1)
+
     return newdict
 
 
